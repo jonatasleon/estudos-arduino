@@ -21,12 +21,13 @@ void setup() {
 }
 
 void loop() {
+  
   cur = millis();
   if(cur >= prev + interval) {
     if(val == 255) {
       analogWrite(pins[i], 0);
       i = (i + 1 > 2) ? 0 : i + 1;
-      val = 0;   
+      val = 0;
     }
     analogWrite(pins[i], val+=5);
     Serial.println(pins[i]);
@@ -35,5 +36,3 @@ void loop() {
     prev = cur;
   }
 }
-
-
